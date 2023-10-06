@@ -1,13 +1,13 @@
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import Loading from './pages/component/loading';
-import React from 'react';
-import Login from './pages/login';
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import LoggedIn from "./LoggedIn";
+import React from "react";
+import Login from "./pages/login";
 
-import getTokenRefresh from './helpers/tokenHelper';
+import getTokenRefresh from "./helpers/tokenHelper";
 
 function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
 
   async function setLoggedInState() {
     if (token) {
@@ -16,7 +16,7 @@ function App() {
         setLoggedIn(true);
       } else {
         setLoggedIn(false);
-        localStorage.clear('token');
+        localStorage.clear("token");
       }
     } else {
       setLoggedIn(false);
@@ -28,12 +28,25 @@ function App() {
   }, []);
 
   return loggedIn == undefined ? (
-    <Loading />
+    <div className="test">hey</div>
   ) : (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/login' element={loggedIn ? <Navigate to='/app' /> : <Login setLoggedIn={setLoggedIn} />} />
+          <Route
+            path="/app/*"
+            element={loggedIn ? <LoggedIn /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/login"
+            element={
+              loggedIn ? (
+                <Navigate to="/app" />
+              ) : (
+                <Login setLoggedIn={setLoggedIn} />
+              )
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
