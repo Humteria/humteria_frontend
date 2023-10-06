@@ -4,6 +4,7 @@ import React from "react";
 import Login from "./pages/login";
 
 import getTokenRefresh from "./helpers/tokenHelper";
+import Register from "./pages/Register";
 
 function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
@@ -47,6 +48,8 @@ function App() {
               )
             }
           />
+          <Route path="/register" element={<Register />} />
+          <Route index element={<Navigate to="/login" />} />
         </Routes>
       </BrowserRouter>
     </>

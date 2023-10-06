@@ -1,10 +1,11 @@
 import React from "react";
+import { setLocalStorageItem } from "../helpers/localStorageHelper";
 import {
   checkMailRequirements,
   checkPasswordRequirements,
-  setLocalStorageItem,
-} from "../helpers/globalHelper";
+} from "../helpers/validationHelper";
 import Loading from "./component/loading";
+import { Link } from "react-router-dom";
 
 function Login(props) {
   document.title = "Humteria | Login";
@@ -80,6 +81,9 @@ function Login(props) {
             Login
           </button>
         </form>
+        <Link to="/register" className="Login-register-link">
+          Register
+        </Link>
       </div>
     );
   }

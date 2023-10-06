@@ -1,3 +1,4 @@
 export default async function getTokenRefresh() {
-  return 'test';
+  //build enpoint to get Token from API (GET)
+  return "test";
 }
