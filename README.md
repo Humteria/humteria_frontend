@@ -1,8 +1,18 @@
-# React + Vite
+![humteria documentation](https://github.com/Humteria/humteria/blob/main/img/HumteriaBannerDoc.png?raw=true)
+<div align=center>
+    <h1>humteria frontend</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository holds the frontend code for the [Humteria](https://github.com/Humteria/humteria) Website
+</div>
 
-Currently, two official plugins are available:
+This project is based on [React + Vite](https://vitejs.dev/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Project setup
+npm
+- in terminal go to base of project
+- `npm run dev`
+- access website through localhost or by pressing `o` in the terminal
+
+sass watch
+- In order for .sass files to be compiled to css you need to run the following command:
+`sass --watch src/main.sass index.css`
